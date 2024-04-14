@@ -1,0 +1,57 @@
+{
+    "name": "TypeScript Repository Simple",
+    // Use docker-compose.extend.yml to run a command that keeps the container running.
+    "dockerComposeFile": [
+        "./compose.yaml"
+    ],
+    "service": "typescript_repository_simple",
+    "workspaceFolder": "/project",
+    "shutdownAction": "stopCompose",
+    // Comment out the next line to run as root instead. Linux users,
+    // update Dockerfile with your user's UID/GID if not 1000.
+    "remoteUser": "node",
+    "features": {
+        // install the latest version of git
+        "ghcr.io/devcontainers/features/git:1": {
+            "version": "latest",
+            "ppa": "false"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.eol": "\n",
+                "files.insertFinalNewline": true,
+                "files.trimTrailingWhitespace": true,
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                },
+                "editor.formatOnSave": true,
+                "editor.codeActionsOnSave": {
+                    "source.organizeImports": "never",
+                    "source.fixAll": "explicit"
+                },
+                "[json]": {
+                    "editor.tabSize": 2
+                },
+                "[yaml]": {
+                    "editor.tabSize": 2
+                },
+                "autoDocstring.docstringFormat": "numpy",
+                "autoDocstring.startOnNewLine": true
+            },
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "eamodio.gitlens",
+                "VisualStudioExptTeam.vscodeintellicode",
+                "exiasr.hadolint",
+                "usernamehw.errorlens",
+                "GitHub.copilot"
+            ]
+        }
+    },
+    "postStartCommand": ""
+}
