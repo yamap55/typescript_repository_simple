@@ -10,17 +10,20 @@
     // Comment out the next line to run as root instead. Linux users,
     // update Dockerfile with your user's UID/GID if not 1000.
     "remoteUser": "node",
-    "features": {
-        // install the latest version of git
-        "ghcr.io/devcontainers/features/git:1": {
-            "version": "latest",
-            "ppa": "false"
-        }
-    },
     "customizations": {
         "vscode": {
             "settings": {
                 "files.eol": "\n",
+                "files.exclude": {
+                    "**/.git": true,
+                    "**/.DS_Store": true,
+                    "**/Thumbs.db": true,
+                    "**/__pycache__": true,
+                    ".pytest_cache": true,
+                    ".coverage": true,
+                    ".ruff_cache": true,
+                    ".venv": true
+                },
                 "files.insertFinalNewline": true,
                 "files.trimTrailingWhitespace": true,
                 "terminal.integrated.profiles.linux": {
@@ -28,6 +31,7 @@
                         "path": "/bin/bash"
                     }
                 },
+                "vsintellicode.modify.editor.suggestSelection": "enabled",
                 "editor.formatOnSave": true,
                 "editor.codeActionsOnSave": {
                     "source.organizeImports": "never",
@@ -49,7 +53,8 @@
                 "VisualStudioExptTeam.vscodeintellicode",
                 "exiasr.hadolint",
                 "usernamehw.errorlens",
-                "GitHub.copilot"
+                "GitHub.copilot",
+                "GitHub.vscode-github-actions"
             ]
         }
     },
