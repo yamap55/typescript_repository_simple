@@ -1,3 +1,3 @@
-export function getMessage(): string {
+export const getMessage = () => {
   return "Hello, TypeScript!";
-}
+};
