@@ -4,7 +4,7 @@
     "dockerComposeFile": [
         "./compose.yaml"
     ],
-    "service": "typescript_repository_simple",
+    "service": "app",
     "workspaceFolder": "/project",
     "shutdownAction": "stopCompose",
     // Comment out the next line to run as root instead. Linux users,
